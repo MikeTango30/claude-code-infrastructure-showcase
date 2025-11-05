@@ -2,9 +2,11 @@
 
 **A curated reference library of production-tested Claude Code infrastructure.**
 
-Born from 6 months of real-world use managing a complex TypeScript microservices project, this showcase provides the patterns and systems that solved the "skills don't activate automatically" problem and scaled Claude Code for enterprise development.
+Born from 6 months of real-world use managing complex projects (TypeScript microservices + Magento 2 development), this showcase provides the patterns and systems that solved the "skills don't activate automatically" problem and scaled Claude Code for enterprise development.
 
 > **This is NOT a working application** - it's a reference library. Copy what you need into your own projects.
+
+**🆕 Now with Magento 2 Support!** Complete infrastructure for Magento 2 module development with proven workflows.
 
 ---
 
@@ -16,7 +18,8 @@ Born from 6 months of real-world use managing a complex TypeScript microservices
 - ✅ **Specialized agents** for complex tasks
 - ✅ **Dev docs system** that survives context resets
 - ✅ **Proven workflows** (TDD & Documentation-Driven, 50-70% token savings)
-- ✅ **Comprehensive examples** using generic blog domain
+- ✅ **Magento 2 development** (module structure, DI, plugins, repositories)
+- ✅ **Comprehensive examples** using generic blog domain + Magento 2
 
 **Time investment to build:** 6 months of iteration
 **Time to integrate into your project:** 15-30 minutes
@@ -80,6 +83,25 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 
 **👉 [Workflow Guide: .claude/dev-docs/workflow-best-practices.md](.claude/dev-docs/workflow-best-practices.md)**
 
+### 🛒 I'm developing Magento 2 modules
+
+**NEW:** Complete Magento 2 infrastructure:
+- **magento2-dev-guidelines skill** - Module structure, DI, plugins, observers, repositories
+- **Magento 2 workflows** - TDD and Documentation-Driven adapted for Magento 2
+- **/m2-module command** - Instant module scaffolding
+- **Complete guide** - Step-by-step for Magento 2 development
+
+**Includes:**
+- Module structure best practices
+- Dependency injection patterns
+- Plugin and observer patterns
+- Repository and service contracts
+- Admin UI components
+- Web API (REST/SOAP)
+- Testing strategies
+
+**👉 [Magento 2 Guide: .claude/dev-docs/magento2-workflow-guide.md](.claude/dev-docs/magento2-workflow-guide.md)**
+
 ---
 
 ## What Makes This Different?
@@ -128,12 +150,13 @@ skill-name/
 
 ```
 .claude/
-├── skills/                 # 7 production skills (NEW: +2 workflow skills)
+├── skills/                 # 8 production skills (NEW: +3 skills)
+│   ├── magento2-dev-guidelines/  (NEW: Magento 2 patterns)
+│   ├── tdd-workflow/           (NEW: Test-Driven Development)
+│   ├── doc-driven-workflow/    (NEW: Documentation-Driven)
 │   ├── backend-dev-guidelines/  (12 resource files)
 │   ├── frontend-dev-guidelines/ (11 resource files)
 │   ├── skill-developer/         (7 resource files)
-│   ├── tdd-workflow/           (NEW: Test-Driven Development)
-│   ├── doc-driven-workflow/    (NEW: Documentation-Driven)
 │   ├── route-tester/
 │   ├── error-tracking/
 │   └── skill-rules.json    # Skill activation configuration
@@ -149,16 +172,18 @@ skill-name/
 │   ├── phase-executor.md   (NEW: Execute phases with fresh context)
 │   ├── tdd-driver.md       (NEW: Autonomous TDD implementation)
 │   └── ... 8 more
-├── commands/               # 7 slash commands (NEW: +4 workflow commands)
-│   ├── dev-docs.md
+├── commands/               # 8 slash commands (NEW: +5 commands)
+│   ├── m2-module.md        (NEW: Magento 2 module scaffolding)
 │   ├── feature.md          (NEW: Create feature structure)
 │   ├── research.md         (NEW: Analyze codebase)
 │   ├── phase-exec.md       (NEW: Execute phase)
 │   ├── clarify.md          (NEW: Ask clarifying questions)
+│   ├── dev-docs.md
 │   └── ...
 └── dev-docs/               # Development documentation
     ├── workflow-best-practices.md  (NEW: Workflow guide)
-    └── reddit-workflows-analysis.md (NEW: Full analysis)
+    ├── reddit-workflows-analysis.md (NEW: Full analysis)
+    └── magento2-workflow-guide.md  (NEW: Magento 2 guide)
 
 dev/
 └── active/                 # Dev docs pattern examples
@@ -169,10 +194,11 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (7)
+### 🎨 Skills (8)
 
 | Skill | Lines | Purpose | Best For |
 |-------|-------|---------|----------|
+| [**magento2-dev-guidelines**](.claude/skills/magento2-dev-guidelines/) 🛒 NEW | ~900 | Magento 2 best practices | Magento 2 modules & customizations |
 | [**tdd-workflow**](.claude/skills/tdd-workflow/) ⭐ NEW | ~600 | Test-driven development | Production features, autonomous execution |
 | [**doc-driven-workflow**](.claude/skills/doc-driven-workflow/) ⭐ NEW | ~800 | Phase-based development | Token efficiency, complex features |
 | [**skill-developer**](.claude/skills/skill-developer/) | 426 | Creating and managing skills | Meta-development |
@@ -186,6 +212,9 @@ dev/
 **NEW Workflow Skills:**
 - **tdd-workflow**: ⭐⭐⭐⭐⭐ Task adherence, ships to 2M users in 2-3 days
 - **doc-driven-workflow**: ⭐⭐⭐⭐⭐ Token efficiency, 50-70% savings
+
+**NEW Magento 2 Skill:**
+- **magento2-dev-guidelines**: 🛒 Complete Magento 2 patterns (DI, plugins, observers, repos, etc.)
 
 **👉 [How to integrate skills →](.claude/skills/README.md)**
 
@@ -229,10 +258,11 @@ dev/
 
 **👉 [How agents work →](.claude/agents/README.md)**
 
-### 💬 Slash Commands (7)
+### 💬 Slash Commands (8)
 
 | Command | Purpose |
 |---------|---------|
+| **/m2-module** 🛒 NEW | Create Magento 2 module structure instantly |
 | **/feature** ⭐ NEW | Create feature documentation structure |
 | **/clarify** ⭐ NEW | Ask clarifying questions before implementation |
 | **/research** ⭐ NEW | Analyze codebase for feature context |
@@ -243,6 +273,9 @@ dev/
 
 **NEW Workflow Commands:**
 - `/feature` → `/clarify` → `/research` → `/phase-exec` = Complete workflow automation
+
+**NEW Magento 2 Command:**
+- `/m2-module Vendor_Module "description"` = Instant module scaffolding with proper structure
 
 ---
 
@@ -433,6 +466,7 @@ MIT License - Use freely in your projects, commercial or personal.
 
 - 📖 [Claude Integration Guide](CLAUDE_INTEGRATION_GUIDE.md) - For AI-assisted setup
 - 🚀 [Workflow Best Practices](.claude/dev-docs/workflow-best-practices.md) ⭐ NEW - Proven workflows
+- 🛒 [Magento 2 Workflow Guide](.claude/dev-docs/magento2-workflow-guide.md) 🆕 NEW - Magento 2 development
 - 📊 [Reddit Workflows Analysis](.claude/dev-docs/reddit-workflows-analysis.md) ⭐ NEW - Full analysis
 - 🎨 [Skills Documentation](.claude/skills/README.md)
 - 🪝 [Hooks Setup](.claude/hooks/README.md)
@@ -442,3 +476,5 @@ MIT License - Use freely in your projects, commercial or personal.
 **Start here:** Copy the two essential hooks, add one skill, and see the auto-activation magic happen.
 
 **For workflows:** Check out [workflow-best-practices.md](.claude/dev-docs/workflow-best-practices.md) for token-efficient, production-proven patterns.
+
+**For Magento 2:** Use `/m2-module` to scaffold modules, then apply TDD or Documentation-Driven workflows for efficient development.
