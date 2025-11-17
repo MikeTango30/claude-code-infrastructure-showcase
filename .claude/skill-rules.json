@@ -3,6 +3,81 @@
   "version": "1.0",
   "skills": [
     {
+      "name": "hyva-themes",
+      "description": "Hyvä Themes development (Alpine.js, Tailwind CSS, ViewModels, Hyvä Checkout)",
+      "triggers": {
+        "keywords": [
+          "hyva",
+          "hyvä",
+          "hyva themes",
+          "alpine",
+          "alpine.js",
+          "alpinejs",
+          "tailwind",
+          "tailwind css",
+          "tailwindcss",
+          "viewmodel",
+          "view model",
+          "hyva checkout",
+          "hyvä checkout",
+          "magewire",
+          "compatibility module",
+          "x-data",
+          "x-init",
+          "x-show",
+          "x-if",
+          "x-for",
+          "@click",
+          "reactive component",
+          "alpine component",
+          "tailwind component",
+          "tailwind.config.js",
+          "phtml alpine",
+          "knockout to alpine",
+          "requirejs to alpine",
+          "convert to hyva",
+          "hyva compatible",
+          "purge css",
+          "jit compilation"
+        ],
+        "file_patterns": [
+          "**/*hyva*/templates/**/*.phtml",
+          "**/tailwind/components/**/*.css",
+          "**/tailwind.config.js",
+          "**/ViewModel/**/*.php",
+          "**/*Hyva*/**/*.php",
+          "**/view/frontend/templates/**/*.phtml"
+        ],
+        "intent_patterns": [
+          "create.*hyva.*component",
+          "create.*alpine.*component",
+          "hyva.*compatibility",
+          "convert.*to.*hyva",
+          "alpine.*tailwind",
+          "viewmodel.*data",
+          "hyva.*checkout",
+          "magewire.*component",
+          "reactive.*component",
+          "tailwind.*styling"
+        ],
+        "content_patterns": [
+          "x-data=",
+          "x-init=",
+          "@click=",
+          "x-show=",
+          "x-model=",
+          "ArgumentInterface",
+          "ViewModelRegistry",
+          "@apply",
+          "@layer components",
+          "initHyva",
+          "Alpine\\.\\$data"
+        ]
+      },
+      "priority": "high",
+      "auto_activate": true
+    },
+    {
       "name": "magento2-dev-guidelines",
       "description": "Magento 2 development patterns and best practices",
       "triggers": {
@@ -31,8 +106,6 @@
           "rest api",
           "graphql",
           "ui component",
-          "knockout",
-          "requirejs",
           "layout xml",
           "block class",
           "phtml template",
@@ -341,6 +414,19 @@
     "activation_mode": "explicit_and_auto"
   },
   "patterns": {
+    "hyva_component_creation": {
+      "description": "Detect when user wants to create Hyvä/Alpine.js component",
+      "activate_skills": ["hyva-themes"],
+      "suggest_commands": ["/hyva-component", "/hyva-module"],
+      "patterns": [
+        "create.*hyva.*component",
+        "create.*alpine.*component",
+        "new.*hyva.*component",
+        "scaffold.*alpine",
+        "hyva.*compatibility.*module",
+        "viewmodel.*component"
+      ]
+    },
     "magento2_module_creation": {
       "description": "Detect when user wants to create a Magento 2 module",
       "activate_skills": ["magento2-dev-guidelines"],
