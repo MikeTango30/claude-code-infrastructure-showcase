@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Events configuration
+ *
+ * @category  Acme
+ * @package   Acme_Example
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <!-- Observer for catalog product save after event -->
+    <event name="catalog_product_save_after">
+        <observer name="acme_example_product_save_after"
+                  instance="Acme\Example\Observer\ProductSaveAfter"/>
+    </event>
+
+    <!-- Observer for customer login event -->
+    <event name="customer_login">
+        <observer name="acme_example_customer_login"
+                  instance="Acme\Example\Observer\CustomerLogin"/>
+    </event>
+
+</config>

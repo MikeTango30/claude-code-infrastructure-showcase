@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module declaration
+ *
+ * @category  Acme
+ * @package   Acme_Example
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Acme_Example" setup_version="1.0.0">
+        <sequence>
+            <!-- Module dependencies go here -->
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Customer"/>
+        </sequence>
+    </module>
+</config>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dependency Injection configuration
+ *
+ * @category  Acme
+ * @package   Acme_Example
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Preference: Interface to Implementation mapping -->
+    <preference for="Acme\Example\Api\Data\EntityInterface"
+                type="Acme\Example\Model\Entity"/>
+    <preference for="Acme\Example\Api\EntityRepositoryInterface"
+                type="Acme\Example\Model\EntityRepository"/>
+
+    <!-- Plugin: Intercept product save to add custom logic -->
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="acme_example_product_save_plugin"
+                type="Acme\Example\Plugin\ProductPlugin"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+
+    <!-- Virtual Type: Create specialized logger -->
+    <virtualType name="Acme\Example\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/acme_example.log</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Acme\Example\Logger\Logger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Acme\Example\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Constructor injection -->
+    <type name="Acme\Example\Model\EntityRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">Acme\Example\Logger\Logger</argument>
+        </arguments>
+    </type>
+
+</config>

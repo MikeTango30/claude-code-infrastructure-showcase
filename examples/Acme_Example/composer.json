@@ -1,0 +1,28 @@
+{
+    "name": "acme/module-example",
+    "description": "Example Magento 2 module demonstrating best practices",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Acme Corporation",
+            "email": "dev@acme.example.com"
+        }
+    ],
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "magento/module-customer": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Acme\\Example\\": ""
+        }
+    }
+}

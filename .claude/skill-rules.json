@@ -1,0 +1,400 @@
+{
+  "$schema": "https://anthropic.com/claude-code/skill-rules-schema.json",
+  "version": "1.0",
+  "skills": [
+    {
+      "name": "magento2-dev-guidelines",
+      "description": "Magento 2 development patterns and best practices",
+      "triggers": {
+        "keywords": [
+          "magento",
+          "magento 2",
+          "magento2",
+          "m2",
+          "adobe commerce",
+          "module",
+          "plugin",
+          "observer",
+          "preference",
+          "di.xml",
+          "dependency injection",
+          "repository pattern",
+          "service contract",
+          "interceptor",
+          "event observer",
+          "db_schema.xml",
+          "etc/module.xml",
+          "registration.php",
+          "setup patch",
+          "declarative schema",
+          "web api",
+          "rest api",
+          "graphql",
+          "ui component",
+          "knockout",
+          "requirejs",
+          "layout xml",
+          "block class",
+          "phtml template",
+          "composer.json magento",
+          "bin/magento",
+          "setup:upgrade",
+          "setup:di:compile"
+        ],
+        "file_patterns": [
+          "app/code/**/*.php",
+          "**/etc/di.xml",
+          "**/etc/module.xml",
+          "**/etc/db_schema.xml",
+          "**/etc/events.xml",
+          "**/etc/webapi.xml",
+          "**/etc/acl.xml",
+          "**/etc/config.xml",
+          "**/etc/adminhtml/system.xml",
+          "**/registration.php",
+          "**/Setup/Patch/**/*.php",
+          "**/Plugin/**/*.php",
+          "**/Observer/**/*.php",
+          "**/Model/ResourceModel/**/*.php",
+          "**/Api/**/*.php"
+        ],
+        "intent_patterns": [
+          "create.*magento.*module",
+          "magento.*plugin",
+          "magento.*observer",
+          "dependency injection.*magento",
+          "service contract",
+          "repository pattern.*magento",
+          "setup.*patch",
+          "declarative schema",
+          "intercept.*method",
+          "event.*observer",
+          "preference.*interface",
+          "virtual type",
+          "magento.*api",
+          "rest.*endpoint",
+          "admin.*configuration",
+          "system.*xml",
+          "acl.*resource",
+          "database.*schema.*magento"
+        ],
+        "content_patterns": [
+          "use Magento\\\\",
+          "ComponentRegistrar::register",
+          "\\bObserverInterface\\b",
+          "\\bRepositoryInterface\\b",
+          "<config.*module\\.xsd",
+          "<config.*di\\.xsd",
+          "<config.*db_schema\\.xsd",
+          "public function before[A-Z]",
+          "public function after[A-Z]",
+          "public function around[A-Z]",
+          "implements ObserverInterface",
+          "extends AbstractModel"
+        ]
+      },
+      "priority": "high",
+      "auto_activate": true
+    },
+    {
+      "name": "tdd-workflow",
+      "description": "Test-Driven Development workflow for autonomous implementation",
+      "triggers": {
+        "keywords": [
+          "tdd",
+          "test driven",
+          "write tests first",
+          "red green refactor",
+          "phpunit",
+          "unit test",
+          "going afk",
+          "i'm afk",
+          "implement until tests pass",
+          "autonomous",
+          "self-correcting"
+        ],
+        "file_patterns": [
+          "**/Test/Unit/**/*.php",
+          "**/Test/Integration/**/*.php",
+          "**/*Test.php",
+          "**/phpunit.xml",
+          "**/phpunit.xml.dist"
+        ],
+        "intent_patterns": [
+          "write.*test.*first",
+          "tdd.*approach",
+          "test.*driven",
+          "going.*afk.*implement",
+          "implement.*until.*test.*pass",
+          "run.*test.*implement",
+          "autonomous.*implementation",
+          "test.*red.*implement"
+        ],
+        "content_patterns": [
+          "extends TestCase",
+          "extends \\\\PHPUnit",
+          "public function test[A-Z]",
+          "\\$this->assert",
+          "\\$this->expect",
+          "@test",
+          "setUp\\(\\)",
+          "tearDown\\(\\)"
+        ]
+      },
+      "priority": "high",
+      "auto_activate": false
+    },
+    {
+      "name": "doc-driven-workflow",
+      "description": "Documentation-Driven Phase Workflow for token efficiency",
+      "triggers": {
+        "keywords": [
+          "documentation driven",
+          "phase workflow",
+          "phase execution",
+          "fresh context",
+          "token efficiency",
+          "phase isolation",
+          "plan.md",
+          "design.md",
+          "phase-exec"
+        ],
+        "file_patterns": [
+          "documentation/features/**/plan.md",
+          "documentation/features/**/design.md",
+          "documentation/features/**/tasks.md",
+          "documentation/features/**/architecture.md",
+          "documentation/features/**/requirements.md",
+          "documentation/modules/**/*.md"
+        ],
+        "intent_patterns": [
+          "break.*into.*phase",
+          "phase.*based.*approach",
+          "fresh.*context.*per.*phase",
+          "execute.*phase",
+          "documentation.*driven",
+          "token.*efficiency",
+          "phase.*isolation",
+          "checkpoint.*phase"
+        ]
+      },
+      "priority": "medium",
+      "auto_activate": false
+    },
+    {
+      "name": "backend-dev-guidelines",
+      "description": "Node.js/Express/TypeScript backend development patterns",
+      "triggers": {
+        "keywords": [
+          "express",
+          "nodejs",
+          "node.js",
+          "typescript backend",
+          "rest api",
+          "microservice",
+          "controller",
+          "service layer",
+          "repository",
+          "prisma",
+          "middleware",
+          "zod validation",
+          "sentry",
+          "dependency injection"
+        ],
+        "file_patterns": [
+          "**/routes/**/*.ts",
+          "**/controllers/**/*.ts",
+          "**/services/**/*.ts",
+          "**/repositories/**/*.ts",
+          "**/middleware/**/*.ts",
+          "**/models/**/*.ts",
+          "**/*.controller.ts",
+          "**/*.service.ts",
+          "**/*.repository.ts"
+        ],
+        "intent_patterns": [
+          "create.*route",
+          "create.*controller",
+          "service.*layer",
+          "repository.*pattern",
+          "api.*endpoint",
+          "middleware",
+          "validation.*zod",
+          "error.*handling.*sentry"
+        ]
+      },
+      "priority": "medium",
+      "auto_activate": true
+    },
+    {
+      "name": "frontend-dev-guidelines",
+      "description": "React/TypeScript frontend development patterns",
+      "triggers": {
+        "keywords": [
+          "react",
+          "tsx",
+          "component",
+          "suspense",
+          "lazy loading",
+          "tanstack",
+          "mui",
+          "material-ui",
+          "useSuspenseQuery",
+          "react router",
+          "frontend"
+        ],
+        "file_patterns": [
+          "src/components/**/*.tsx",
+          "src/pages/**/*.tsx",
+          "src/features/**/*.tsx",
+          "**/*.component.tsx",
+          "**/hooks/**/*.ts",
+          "**/hooks/**/*.tsx"
+        ],
+        "intent_patterns": [
+          "create.*component",
+          "react.*component",
+          "frontend.*page",
+          "ui.*component",
+          "suspense.*loading",
+          "data.*fetching"
+        ]
+      },
+      "priority": "medium",
+      "auto_activate": true
+    },
+    {
+      "name": "skill-developer",
+      "description": "Create and manage Claude Code skills",
+      "triggers": {
+        "keywords": [
+          "create skill",
+          "skill-rules",
+          "skill activation",
+          "trigger patterns",
+          "skill yaml",
+          "skill frontmatter",
+          "progressive disclosure"
+        ],
+        "file_patterns": [
+          ".claude/skills/**/SKILL.md",
+          ".claude/skill-rules.json",
+          ".claude/hooks/**/*"
+        ],
+        "intent_patterns": [
+          "create.*skill",
+          "modify.*skill",
+          "skill.*trigger",
+          "skill.*activation",
+          "hook.*implementation"
+        ]
+      },
+      "priority": "low",
+      "auto_activate": false
+    },
+    {
+      "name": "route-tester",
+      "description": "Test authenticated routes with cookie-based auth",
+      "triggers": {
+        "keywords": [
+          "test route",
+          "test endpoint",
+          "authenticate route",
+          "cookie auth",
+          "route testing"
+        ],
+        "intent_patterns": [
+          "test.*route",
+          "test.*endpoint",
+          "verify.*route.*work"
+        ]
+      },
+      "priority": "low",
+      "auto_activate": false
+    },
+    {
+      "name": "error-tracking",
+      "description": "Sentry error tracking and performance monitoring",
+      "triggers": {
+        "keywords": [
+          "sentry",
+          "error tracking",
+          "error monitoring",
+          "performance monitoring",
+          "error capture",
+          "sentry integration"
+        ],
+        "intent_patterns": [
+          "add.*sentry",
+          "error.*tracking",
+          "capture.*error",
+          "monitor.*performance"
+        ]
+      },
+      "priority": "low",
+      "auto_activate": false
+    }
+  ],
+  "rules": {
+    "max_active_skills": 3,
+    "conflict_resolution": "priority",
+    "activation_mode": "explicit_and_auto"
+  },
+  "patterns": {
+    "magento2_module_creation": {
+      "description": "Detect when user wants to create a Magento 2 module",
+      "activate_skills": ["magento2-dev-guidelines"],
+      "suggest_commands": ["/m2-module"],
+      "patterns": [
+        "create.*magento.*module",
+        "new.*magento.*module",
+        "scaffold.*module",
+        "generate.*module.*magento"
+      ]
+    },
+    "tdd_implementation": {
+      "description": "Detect TDD workflow initiation",
+      "activate_skills": ["tdd-workflow"],
+      "patterns": [
+        "write.*test.*first",
+        "going.*afk.*implement",
+        "tdd.*approach",
+        "implement.*until.*test.*pass"
+      ]
+    },
+    "phase_based_development": {
+      "description": "Detect documentation-driven phase workflow",
+      "activate_skills": ["doc-driven-workflow"],
+      "suggest_commands": ["/feature", "/clarify", "/research", "/phase-exec"],
+      "patterns": [
+        "break.*into.*phase",
+        "fresh.*context",
+        "phase.*execution",
+        "documentation.*driven"
+      ]
+    },
+    "magento2_tdd_combined": {
+      "description": "Detect combined Magento 2 + TDD workflow",
+      "activate_skills": ["magento2-dev-guidelines", "tdd-workflow"],
+      "patterns": [
+        "magento.*test.*first",
+        "magento.*tdd",
+        "phpunit.*magento.*module"
+      ]
+    }
+  },
+  "suggestions": {
+    "on_module_creation": {
+      "condition": "file_created:app/code/**/**/registration.php",
+      "message": "✅ Module created! Next steps:\n  • For TDD: Write tests in Test/Unit/, then 'I'm going AFK'\n  • For Phases: Run /feature [name] to break into phases\n  • For Quick: Describe what to implement"
+    },
+    "on_test_file_created": {
+      "condition": "file_created:**/*Test.php",
+      "message": "✅ Tests created! Use TDD workflow:\n  • Say: 'I'm going AFK, implement until tests pass'\n  • Claude will autonomously implement with test-driven approach"
+    },
+    "on_feature_docs_created": {
+      "condition": "directory_created:documentation/features/**",
+      "message": "✅ Feature docs created! Next:\n  • /clarify [feature-name] - Ask clarifying questions\n  • /research [feature-name] - Analyze codebase\n  • /phase-exec [feature-name] 1 - Start Phase 1 with fresh context"
+    }
+  }
+}
